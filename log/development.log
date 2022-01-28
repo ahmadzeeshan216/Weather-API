@@ -1,0 +1,58 @@
+Started GET "/" for 127.0.0.1 at 2022-01-17 12:20:16 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/dev/.rvm/gems/ruby-2.7.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dev/.rvm/gems/ruby-2.7.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.4ms | Allocations: 409)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 2232)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-01-17 12:20:17 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/info" for 127.0.0.1 at 2022-01-17 12:20:28 -0800
+Processing by Rails::InfoController#index as HTML
+Redirected to http://localhost:8000/rails/info/routes
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 363)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2022-01-17 12:20:28 -0800
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/dev/.rvm/gems/ruby-2.7.1/gems/railties-6.0.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/dev/.rvm/gems/ruby-2.7.1/gems/actionpack-6.0.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (Duration: 3.0ms | Allocations: 1293)
+  Rendered /Users/dev/.rvm/gems/ruby-2.7.1/gems/actionpack-6.0.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.1ms | Allocations: 682)
+  Rendered /Users/dev/.rvm/gems/ruby-2.7.1/gems/railties-6.0.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3028)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4110)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2022-01-17 12:21:14 -0800
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/dev/.rvm/gems/ruby-2.7.1/gems/railties-6.0.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/dev/.rvm/gems/ruby-2.7.1/gems/actionpack-6.0.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (Duration: 4.5ms | Allocations: 1060)
+  Rendered /Users/dev/.rvm/gems/ruby-2.7.1/gems/actionpack-6.0.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.6ms | Allocations: 120)
+  Rendered /Users/dev/.rvm/gems/ruby-2.7.1/gems/railties-6.0.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1867)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 2161)
+
+
