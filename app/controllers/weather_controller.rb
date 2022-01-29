@@ -4,27 +4,32 @@ class WeatherController < ApplicationController
   before_action :format_params
   before_action :validate_params
   before_action :set_language
+  before_action :set_weather
 
   def temperature
-    render json: { description: temperature_description }
+    render json: { description: @weather.temperature_details }
   end
 
   def wind
-    render json: { description: wind_description }
+    render json: { description: @weather.wind_details }
   end
 
   def clouds
-    render json: { description: clouds_description }
+    render json: { description: @weather.clouds_details }
   end
 
 private
 
-  def validate_params
-    render status: :unprocessable_entity unless unit_param.present?
+  def set_weather
+    @weather = RegionalWeather.new(symbolized_action_name => unit_param_value)
   end
 
-  def unit_param
-    @unit_param ||= params[UNIT_PARAM_NAMES[action_name.to_sym]]
+  def validate_params
+    render status: :unprocessable_entity unless unit_param_value.present?
+  end
+
+  def unit_param_value
+    @unit_param ||= params[UNIT_PARAM_NAMES[symbolized_action_name]]
   end
 
   def format_params
@@ -33,35 +38,5 @@ private
 
   def set_language
     I18n.locale = params[:locale].to_s
-  end
-
-  def temperature_description
-    if unit_param < 0
-      I18n.t('temperature.below_zero', degrees: unit_param.abs)
-    else
-      I18n.t('temperature.above_zero', degrees: unit_param)
-    end
-  end
-
-  def wind_description
-    if unit_param < 3
-      I18n.t('wind.none')
-    elsif unit_param < 8
-      I18n.t('wind.weak')
-    elsif unit_param < 20
-      I18n.t('wind.medium')
-    else
-      I18n.t('wind.strong')
-    end
-  end
-
-  def clouds_description
-    if unit_param <= 10
-      I18n.t('clouds.none')
-    elsif unit_param <= 70
-      I18n.t('clouds.partial')
-    else
-      I18n.t('clouds.full')
-    end
   end
 end
