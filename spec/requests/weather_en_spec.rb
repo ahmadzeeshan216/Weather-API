@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'WeatherControllerSpec', type: :request do  
+describe 'WeatherControllerSpec', type: :request do
   context 'english locale' do
     describe 'temperature' do
       context 'when parameter "degrees" is passed' do
@@ -10,7 +10,7 @@ describe 'WeatherControllerSpec', type: :request do
               degrees: -10,
               locale: :en
             }
-            
+
             post '/weather/temperature', params: params, as: :json
 
             expected = {description: '10 degrees Celsius below zero'}
